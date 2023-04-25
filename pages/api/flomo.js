@@ -20,7 +20,8 @@ export default async function handler(req, res) {
 
   let newReq = {
     method: "get",
-    url: `https://flomoapp.com/api/memo?tz=8:0&offset=${req.query?.offset ? req.query?.offset : ""}&limit=${req.query?.limit}&tag=${req.query?.tag}`,
+    //url: `https://flomoapp.com/api/memo?tz=8:0&offset=${req.query?.offset ? req.query?.offset : ""}&limit=${req.query?.limit}&tag=${req.query?.tag}`,
+    url: `https://flomoapp.com/api/memo?tz=8:0&start_date=${req.query.start_date}&end_date=${req.query.end_date}`,
     headers: req.query?.flomo_session ? { cookie: `flomo_session=${req.query?.flomo_session}` } : undefined,
     withCredentials: true,
   }
